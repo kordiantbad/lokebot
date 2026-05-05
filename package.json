@@ -1,2 +1,5 @@
-npm init -y
-npm install stoatbot.js
+{
+  "scripts": {
+    "start": "node index.js"
+  }
+}
