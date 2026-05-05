@@ -81,3 +81,5 @@ bot.on("message", async (message) => {
 });
 
 bot.login(process.env.BOT_TOKEN);
+setTimeout(1)
+bot.logout(process.env.BOT_TOKEN);
