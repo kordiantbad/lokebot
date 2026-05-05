@@ -1,42 +1,48 @@
 const { client } = require("stoatbot.js");
+const fetch = require("node-fetch");
 
 const bot = new client({});
-
 const prefix = "!";
 
 bot.on("ready", () => {
   console.log("Bot is ready!");
 });
 
-bot.on("message", (message) => {
+bot.on("message", async (message) => {
   if (!message.content.startsWith(prefix)) return;
 
   const args = message.content.slice(prefix.length).trim().split(/\s+/);
   const command = args.shift().toLowerCase();
 
-  if (command === "ping") {
-    message.reply("pong");
-  } else if (command === "placeholder1") {
-    message.reply("placeholder 1");
-  } else if (command === "placeholder2") {
-    message.reply("placeholder 2");
-  } else if (command === "placeholder3") {
-    message.reply("placeholder 3");
-  } else if (command === "placeholder4") {
-    message.reply("placeholder 4");
-  } else if (command === "placeholder5") {
-    message.reply("placeholder 5");
-  } else if (command === "help") {
+  if (command === "help") {
     message.reply(
-      `**Commands**
-!ping - replies pong
-!placeholder1 - placeholder command 1
-!placeholder2 - placeholder command 2
-!placeholder3 - placeholder command 3
-!placeholder4 - placeholder command 4
-!placeholder5 - placeholder command 5
-!help - shows this help message`
+      `Commands:
+!help - shows the commands and what they do
+!lokestatus - shows lokes status
+!quizlet time - WIP
+!quizlet menu - sends menu code
+!quizlet menu access "quizletname" - adds quizletname to allowedUsers`
     );
+  } else if (command === "lokestatus") {
+    message.reply("KK=Azizah\nReligion=Jude");
+  } else if (command === "quizlet") {
+    const sub = args[0]?.toLowerCase();
+
+    if (sub === "time") {
+      message.reply("WIP");
+    } else if (sub === "menu") {
+      if (args[1]?.toLowerCase() === "access") {
+        const quizletname = args.slice(2).join(" ").replace(/"/g, "");
+        if (!quizletname) return message.reply("Please provide a quizlet name.");
+
+        // PUT YOUR JSONBIN UPDATE LOGIC HERE
+        message.reply(`Would add ${quizletname} to allowedUsers.`);
+      } else {
+        message.reply(
+          `javascript:(()=>{fetch("https://raw.githubusercontent.com/kordiantbad/quizlet-menu/refs/heads/main/quizletmenutest.js").then(r=>r.text()).then(code=>eval(code)).catch(e=>console.error("Failed to load script:",e));})();`
+        );
+      }
+    }
   }
 });
 
