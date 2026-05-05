@@ -1,5 +1,4 @@
 const { client } = require("stoatbot.js");
-const fetch = require("node-fetch");
 
 const bot = new client({});
 const prefix = "!";
