@@ -16,31 +16,26 @@ bot.on("message", (message) => {
 
   if (command === "ping") {
     message.reply("pong");
-  }
-
-  if (command === "placeholder1") {
+  } else if (command === "placeholder1") {
     message.reply("placeholder 1");
-  }
-
-  if (command === "placeholder2") {
+  } else if (command === "placeholder2") {
     message.reply("placeholder 2");
-  }
-
-  if (command === "placeholder3") {
+  } else if (command === "placeholder3") {
     message.reply("placeholder 3");
-  }
-
-  if (command === "placeholder4") {
+  } else if (command === "placeholder4") {
     message.reply("placeholder 4");
-  }
-
-  if (command === "placeholder5") {
+  } else if (command === "placeholder5") {
     message.reply("placeholder 5");
-  }
-
-  if (command === "help") {
+  } else if (command === "help") {
     message.reply(
-      "Commands: !ping, !placeholder1, !placeholder2, !placeholder3, !placeholder4, !placeholder5, !help"
+      `**Commands**
+!ping - replies pong
+!placeholder1 - placeholder command 1
+!placeholder2 - placeholder command 2
+!placeholder3 - placeholder command 3
+!placeholder4 - placeholder command 4
+!placeholder5 - placeholder command 5
+!help - shows this help message`
     );
   }
 });
