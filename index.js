@@ -56,7 +56,10 @@ bot.on("message", async (message) => {
   } else if (command === "lokestatus") {
     message.reply("KK=Azizah\nReligion=Jude");
   } else if (command === "noel") {
-    message.reply("https://cdn.stoatusercontent.com/attachments/0YswkV6DaBhtK8pe_WizJ6ciDEpk2XiR6z9uPo1vQS");
+    message.reply("https://cdn.stoatusercontent.com/attachments/m4TV_JsYmCuSFpoGFb12udSiNGynrbN3kdFimyVwgS");
+    message.reply("https://cdn.stoatusercontent.com/attachments/UGrxssMszsAWYmCTCPWFWXcBa2pqAYrQlXKc9BiO1n");
+  } else if (command === "noiel") {
+    message.reply("https://cdn.stoatusercontent.com/attachments/RFm1DtWC5MEbr4Gq3O-ZqrCrGoL9-SrXDhy6EWTysF");
   } else if (command === "quizlet") {
     const sub = args[0]?.toLowerCase();
 
