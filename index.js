@@ -38,10 +38,6 @@ bot.on("ready", () => {
   console.log("Bot is ready!");
 });
 
-bot.on("error", (error) => {
-  console.error("Bot error:", error);
-});
-
 bot.on("message", async (message) => {
   if (!message.content.startsWith(prefix)) return;
 
@@ -55,8 +51,7 @@ bot.on("message", async (message) => {
 !lokestatus - bot answers with KK=Azizah and Religion=Jude
 !quizlet time - WIP
 !quizlet menu - sends menu code
-!quizlet menu access "quizletname" - adds the name to allowedUsers
-!noel - sends an image`
+!quizlet menu access "quizletname" - adds the name to allowedUsers`
     );
   } else if (command === "lokestatus") {
     message.reply("KK=Azizah\nReligion=Jude");
@@ -82,14 +77,6 @@ bot.on("message", async (message) => {
         );
       }
     }
-  } else if (command === "noel") {
-    message.channel.send({
-      embeds: [
-        {
-          media: "0YswkV6DaBhtK8pe_WizJ6ciDEpk2XiR6z9uPo1vQS"
-        }
-      ]
-    });
   }
 });
 
