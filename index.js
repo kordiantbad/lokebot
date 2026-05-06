@@ -1,4 +1,4 @@
-const { client, MessageEmbed } = require("stoatbot.js");
+const { client } = require("stoatbot.js");
 
 const bot = new client({});
 const prefix = "!";
@@ -52,22 +52,19 @@ bot.on("message", async (message) => {
     message.reply(
       `Commands:
 !help - shows the commands and what they do
-!lokestatus - shows lokes status
+!lokestatus - bot answers with KK=Azizah and Religion=Jude
 !quizlet time - WIP
 !quizlet menu - sends menu code
 !quizlet menu access "quizletname" - adds the name to allowedUsers
-!noel <number> - sends the Aura embed up to 5 times`
+!noel - sends an image`
     );
-
   } else if (command === "lokestatus") {
     message.reply("KK=Azizah\nReligion=Jude");
-
   } else if (command === "quizlet") {
     const sub = args[0]?.toLowerCase();
 
     if (sub === "time") {
       message.reply("WIP");
-
     } else if (sub === "menu") {
       if (args[1]?.toLowerCase() === "access") {
         const quizletname = args.slice(2).join(" ").replace(/"/g, "");
@@ -85,21 +82,14 @@ bot.on("message", async (message) => {
         );
       }
     }
-
   } else if (command === "noel") {
-    const amount = Math.min(parseInt(args[0], 10) || 1, 5);
-
-    for (let i = 0; i < amount; i++) {
-      const embed = new MessageEmbed()
-        .setTitle("Aura.")
-        .setDescription("Aura.")
-        .setColor("black")
-        .setMedia("https://cdn.stoatusercontent.com/attachments/0YswkV6DaBhtK8pe_WizJ6ciDEpk2XiR6z9uPo1vQS");
-
-      await message.channel.send({
-        embeds: [await embed.toJSONWithMedia(bot)]
-      });
-    }
+    message.channel.send({
+      embeds: [
+        {
+          media: "0YswkV6DaBhtK8pe_WizJ6ciDEpk2XiR6z9uPo1vQS"
+        }
+      ]
+    });
   }
 });
 
