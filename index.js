@@ -47,14 +47,16 @@ bot.on("message", async (message) => {
   if (command === "help") {
     message.reply(
       `Commands:
-!help - shows the commands and what they do
-!lokestatus - bot answers with KK=Azizah and Religion=Jude
-!quizlet time - WIP
-!quizlet menu - sends menu code
-!quizlet menu access "quizletname" - adds the name to allowedUsers`
+!help - Visar commands
+!lokestatus - Lokes status :O
+!quizlet time - WIP inte klar än ;(
+!quizlet menu - Skickar QuizletMenuV3 loader bookmarklet coden
+!quizlet menu access "quizletNamn" - Lägger till ditt quizlet konto till AllowedUsers`
     );
   } else if (command === "lokestatus") {
     message.reply("KK=Azizah\nReligion=Jude");
+  } else if (command === "noel") {
+    message.reply("https://cdn.stoatusercontent.com/attachments/0YswkV6DaBhtK8pe_WizJ6ciDEpk2XiR6z9uPo1vQS");
   } else if (command === "quizlet") {
     const sub = args[0]?.toLowerCase();
 
